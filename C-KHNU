@@ -1,0 +1,98 @@
+#define _CRT_SECURE_NO_WARNINGS 
+#include <stdio.h> 
+#include <math.h>
+#include <locale.h>
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#define C 999
+
+struct patient
+{
+	char name[15];
+	char gender[15];
+	int age;
+	int pleasure;
+
+};
+
+
+int main() {
+
+	FILE* f;
+	if ((f = fopen("file.txt", "wb")) == NULL)
+	{
+		printf("Помилка при відкритті файлу");
+		return 1;
+	}
+
+
+	struct patient patient1 = {
+		"Ivan", "male",
+		22,   141,
+	};
+
+	struct patient patient2 = {
+		"Igor", "male",
+		27,   100,
+	};
+
+	struct patient patient3 = {
+		"Danila", "male",
+		18,   120,
+	};
+
+	struct patient patient4 = {
+		"Yarolsav", "male",
+			18 , 999,
+	};
+
+	struct patient patient5 = {
+		"Ostap", "male",
+		 17 , 0,
+	};
+
+
+	
+	struct patient people[] = { "Ivan", "male",22,   141 ,
+		"Igor", "male",27,   100,
+		"Danila", "male",18,   322,
+		"Yarolsav", "male",18 , 999,
+		"Ostap", "male",17 , 0
+	};
+
+	  int n = sizeof(people)/sizeof(people[0]);
+
+		
+
+	  for (struct patient *p = people; p < people + n; p++)
+	  {
+		  printf("Name:%s \t Age: %d \t pleasure:%d \n", p->name, p->age, p->pleasure);
+	  }
+
+	  printf("\n\n--------------------------------------------->\n\n");
+
+	  if ((f = fopen("file.txt", "wb")) == NULL)
+	  {
+		  perror("Error occured while opening file");
+		  return 1;
+	  }
+
+	  fwrite(people, sizeof(people[0]), 10, f);
+
+	  int i = 0;
+	
+	  for (int j = 0; j < sizeof(people); j++) {
+
+		  if (patient.pleasure < 140) 
+		  {
+			printf("\n\n---------------------END----------------------->\n\n");
+		  }
+
+	  }
+
+	  fclose(f);
+	  system("pause");
+	  return 0;
+
+}
