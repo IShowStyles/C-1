@@ -94,9 +94,12 @@ int main() {
 
 	for (int j = 0; j <= 5; j++) {
 
-		if (people[j].pleasure < 140)
+		if (people[j].pleasure > 140)
 		{
-			printf("\n\n---------------------END----------------------->\n\n");
+			
+			printf("\t\t\t%s\n \t\t\t%d pleasure", people[j].name, people[j].pleasure);
+			printf("\n\n---------------------R.I.P.-----------------------x\n\n");
+			f//write(people[j].name, sizeof(people[j].name), 100, f);
 		}
 
 	}
