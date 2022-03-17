@@ -28,14 +28,7 @@ int main() {
 		printf("Помилка при відкритті файлу");
 		return 1;
 	}
-	
 
-	//int number = 140;
-	//char string[25];
-
-	//itoa(number, string, 10);
-
-	//char string[25]= {"140"};
 
 	struct patient patient1 = {
 		"Ivan", "male",
@@ -98,8 +91,8 @@ int main() {
 		{
 			
 			printf("\t\t\t%s\n \t\t\t%d pleasure", people[j].name, people[j].pleasure);
-			printf("\n\n---------------------R.I.P.-----------------------x\n\n");
-			f//write(people[j].name, sizeof(people[j].name), 100, f);
+			//printf("\n\n---------------------R.I.P.-----------------------x\n\n");
+			write(people[j].name, sizeof(people[j].name), 100, f);
 		}
 
 	}
