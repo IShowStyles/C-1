@@ -6,6 +6,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define C 999
+#define N 5
+
+
 
 struct patient
 {
@@ -14,7 +17,7 @@ struct patient
 	int age;
 	int pleasure;
 
-};
+} ;
 
 
 int main() {
@@ -25,7 +28,14 @@ int main() {
 		printf("Помилка при відкритті файлу");
 		return 1;
 	}
+	
 
+	//int number = 140;
+	//char string[25];
+
+	//itoa(number, string, 10);
+
+	//char string[25]= {"140"};
 
 	struct patient patient1 = {
 		"Ivan", "male",
@@ -53,7 +63,7 @@ int main() {
 	};
 
 
-	
+
 	struct patient people[] = { "Ivan", "male",22,   141 ,
 		"Igor", "male",27,   100,
 		"Danila", "male",18,   322,
@@ -61,38 +71,38 @@ int main() {
 		"Ostap", "male",17 , 0
 	};
 
-	  int n = sizeof(people)/sizeof(people[0]);
+	int n = sizeof(people) / sizeof(people[0]);
 
-		
 
-	  for (struct patient *p = people; p < people + n; p++)
-	  {
-		  printf("Name:%s \t Age: %d \t pleasure:%d \n", p->name, p->age, p->pleasure);
-	  }
 
-	  printf("\n\n--------------------------------------------->\n\n");
+	for (struct patient* p = people; p < people + n; p++)
+	{
+		printf("Name:%s \t Age: %d \t pleasure:%d \n", p->name, p->age, p->pleasure);
+	}
 
-	  if ((f = fopen("file.txt", "wb")) == NULL)
-	  {
-		  perror("Error occured while opening file");
-		  return 1;
-	  }
+	printf("\n\n--------------------------------------------->\n\n");
 
-	  fwrite(people, sizeof(people[0]), 10, f);
+	if ((f = fopen("file.txt", "wb")) == NULL)
+	{
+		perror("Error occured while opening file");
+		return 1;
+	}
 
-	  int i = 0;
-	
-	  for (int j = 0; j < sizeof(people); j++) {
+	fwrite(people, sizeof(people[0]), 10, f);
 
-		  if (patient.pleasure < 140) 
-		  {
+	int i = 0;
+
+	for (int j = 0; j <= 5; j++) {
+
+		if (people[j].pleasure < 140)
+		{
 			printf("\n\n---------------------END----------------------->\n\n");
-		  }
+		}
 
-	  }
+	}
 
-	  fclose(f);
-	  system("pause");
-	  return 0;
+	fclose(f);
+	system("pause");
+	return 0;
 
 }
